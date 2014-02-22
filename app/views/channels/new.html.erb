@@ -1,0 +1,130 @@
+    <section id="content">
+        <div class='container'>
+            <div class='row' style="padding-bottom:0px;" id='content-wrapper'>
+                <div class='col-xs-12 col-sm-12'>
+                    <div class="page-header page-header-with-buttons">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <h1 class="pull-left">
+                                    <i class="icon-home"></i>
+                                    <span>新建频道</span>
+                                </h1>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="box">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="box">
+                                    <div class="box-content">
+                                        <!--<form class="form form-horizontal" style="margin-bottom: 0;" method="post"
+                                              action="channel.html" accept-charset="UTF-8"><input
+                                                name="authenticity_token"
+                                                type="hidden">-->
+																				<%= form_for @channel, html: { class: "form form-horizontal", style: "margin-bottom: 0;" } do |f| %>
+                                            <div class="form-group">
+                                                <!--<label class="col-md-2 control-label" for="inputText1">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</label>-->
+																										<%= f.label "Name", class: "col-md-2 control-label" %>
+                                                <div class="col-md-5">
+                                                    <!--<input class="form-control" id="inputText1" placeholder="请填写名称."
+                                                           type="text">-->
+																												<%= f.text_field :name, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+<!--                                                <label class="col-md-2 control-label" for="inputText2">频道URL</label>-->
+																								<%= f.label :Url, class: "col-md-2 control-label" %>
+                                                <div class="col-md-5">
+<!--                                                    <input class="form-control" id="inputText2"
+                                                           placeholder="请填写频道URL."
+                                                           type="text">-->
+																												<%= f.text_field :url, class: "form-control" %>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+<!--                                                <label class="col-md-2 control-label" for="inputSelect">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>-->
+																								<%= f.label :Status, class: "col-md-2 control-label" %>
+
+                                                <div class="col-md-5">
+<!--                                                    <select class="form-control" id="inputSelect">
+                                                        <option>活动</option>
+                                                        <option>停用</option>
+                                                    </select>-->
+																												<%= f.select :state_id, options_for_select(State.all.collect { |state| state.name }), {}, { class: "form-control" } %>
+                                                </div>
+                                            </div>
+<!--
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label" for="inputText3">广告位个数</label>
+
+                                                <div class="col-md-5">
+                                                    <input class="form-control" id="inputText3"
+                                                           placeholder="请填写广告位个数." type="text">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label" for="inputTextArea1">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</label>
+
+                                                <div class="col-md-5">
+                                                    <textarea class="form-control" id="inputTextArea1"
+                                                              placeholder="请填写备注信息." rows="3"></textarea>
+                                                </div>
+                                            </div>
+-->
+                                            <div class="form-actions form-actions-padding-sm">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-offset-2">
+<!--                                                        <button class="btn btn-primary" type="submit">
+                                                            <i class="icon-save"></i>
+                                                            Save
+                                                        </button>
+                                                        <button class="btn" type="submit">Cancel</button>-->
+																														<%= hidden_field_tag :publisher, params[:publisher] %>
+																														<%= f.submit "Save", class: "btn btn-primary" %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+																				<% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- your & Flatty javascripts -->
+<!-- / jquery [required] -->
+<script src="/assets/jquery/jquery.min.js" type="text/javascript"></script>
+<!-- / jquery mobile (for touch events) -->
+<script src="/assets/jquery/jquery.mobile.custom.min.js" type="text/javascript"></script>
+<!-- / jquery migrate (for compatibility with new jquery) [required] -->
+<script src="/assets/jquery/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- / jquery ui -->
+<script src="/assets/jquery/jquery-ui.min.js" type="text/javascript"></script>
+<!-- / jQuery UI Touch Punch -->
+<script src="/assets/plugins/jquery_ui_touch_punch/jquery.ui.touch-punch.min.js"
+        type="text/javascript"></script>
+<!-- / bootstrap [required] -->
+<script src="/assets/bootstrap/bootstrap.js" type="text/javascript"></script>
+<!-- / modernizr -->
+<script src="/assets/plugins/modernizr/modernizr.min.js" type="text/javascript"></script>
+<!-- / retina -->
+<script src="/assets/plugins/retina/retina.js" type="text/javascript"></script>
+<!-- / theme file [required] -->
+<script src="/assets/theme.js" type="text/javascript"></script>
+<script src="/assets/plugins/common/moment.min.js" type="text/javascript"></script>
+<script src="/assets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js"
+        type="text/javascript"></script>
+<!-- project request -->
+<script type="text/javascript" src="/assets/project.js"></script>
+</body>
+</html>

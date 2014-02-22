@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!-- this enables responsive features in browser -->
+      <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+      <meta content='text/html;charset=utf-8' http-equiv='content-type'>
+      <title>Campaign Manager</title>
+ 
+      <!-- your & Flatty stylesheets -->
+       <link href="../assets/stylesheets/bootstrap/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+       <link href="../assets/stylesheets/light-theme.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
+
+       <link rel="stylesheet" type="text/css" href="../assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css">
+       <link rel="stylesheet" type="text/css" href="../assets/stylesheets/plugins/datatables/bootstrap-datatable.css">
+
+       <!-- st-grid -->
+       <link rel="stylesheet" type="text/css" href="../plugins/st-grid3.0/css/st-grid.css">
+       <script type="text/javascript" src="../plugins/st-grid3.0/js/escape.js"></script>
+       <script type="text/javascript" src="../plugins/st-grid3.0/js/st-grid.js"></script>
+
+      <!-- if you are going to support IE8 you must include these files -->
+      <!--[if lt IE 9]>
+        <script src='assets/javascripts/ie/html5shiv.js' type='text/javascript'></script>
+        <script src='assets/javascripts/ie/respond.min.js' type='text/javascript'></script>
+      <![endif]-->
+      <!--[if lt IE 8]>
+      <script>
+          var isIE = navigator.userAgent.indexOf("MSIE") >= 0;
+          if(isIE){
+            var r = /MSIE\s+(\d+)/.exec(navigator.appVersion);
+            if(r[1]){
+            	if(r[1] < 8){
+            		window.location.href = "warning.html";
+            	}
+          	}
+          }
+      </script>
+    <![endif]-->
+      <style type="text/css">
+	       body{
+	         font-family: "微软雅黑","黑体","宋体","arial";
+	       }
+       </style>
+    </head>
+    <body>
+       <div>
+			<nav class="navbar navbar-default" style="margin-bottom:0;border:0;background:#FFF;" role="navigation">
+				<div class="navbar-header">
+					<img src="../assets/images/sn_logo.png" width="50"/>
+                      <span style="font-size:1.5em;line-height:50px;height:50px;">Digital Marketing</span>
+						<button class="navbar-toggle orange-background" data-target=".navbar-ex1-collapse" style="border:0;"
+							data-toggle="collapse" type="button">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+				</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse" style="line-height:50px;height:50px;">
+					<ul class="nav navbar-nav pull-right">
+						<li>
+							<a href="index.html" style="display:inline;padding:0;"><img src="../assets/images/nav1.png"></a>
+            				<a href="index.html" style="display:inline;padding-left:0">Dashboard</a>
+						</li>
+						<li>
+							<a href="campaign.html" style="display:inline;padding:0;"><img src="../assets/images/nav2.png"></a>
+            				<a href="campaign.html" style="display:inline;padding-left:0">Campaign Manager</a>
+						</li>
+						<li>
+							<a href="" style="display:inline;padding:0;"><img src="../assets/images/nav3.png"></a>
+            				<a href="" style="display:inline;padding-left:0">Monitor</a>
+						</li>
+                        <li class=""><a href="media.html" style="display:inline;padding-left:0">
+						<img src="../assets/images/nav6.png">Media Manager
+					</a></li>
+                    <li class=""><a href="media.html" style="display:inline;padding-left:0">
+						<img src="../assets/images/nav4.png">Analytics
+					</a></li>
+						
+						<li>
+							<a href="" style="display:inline;padding:0;"><img src="../assets/images/nav5.png"></a>
+            				<a href="" style="display:inline;padding-left:0">Competitive Analytics</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		    <nav class="navbar navbar-default orange-background" style="margin-bottom:0;">
+			    <!-- application logo -->
+			    <ul class="nav navbar-nav navbar-left" style="float:left;width:100%;">
+				    <li style="float:left;">
+				    	<a href="index.html">
+				          <i class="icon-home"></i>
+				        </a>
+			        </li>
+			        <li style="float:left;">
+			        	<a  href="#">
+			  			  <i class="icon-globe"></i>
+			  			  http://www.suning.com
+			  			  <i class="caret"></i>
+			  		    </a>
+			        </li>
+			        <li style="float:left;">
+			        	<a href="">报告</a>
+			        </li>
+			         <li style="float:left;">
+			         	<a href="">自定义</a>
+			         </li>
+			         <li style="float:left;">
+			         	<a href="">优化</a>
+			         </li>
+			        <li style="float:right;"><a href="#">帮助</a></li>
+			      	<li style="float:right;"><a href="#">管理</a></li>
+			    </ul>				   
+		    </nav>
+		    
+       </div>
+	   <div id="wrapper" style="position:relative;">
+	    <div id="main-nav-bg"></div>
+	    <nav id="main-nav" style="top:0px;">
+	    	<div class='navigation'>
+	          <ul class='nav nav-stacked'>
+	            <li class=''>
+	              <a class="dropdown-collapse" href="#">
+	                <i class='icon-exchange'></i>
+	                <span>普通媒体</span>
+	                <i class='icon-angle-down angle-down'></i>
+	              </a>
+	              <ul class='nav nav-stacked in'>
+	                <li class=''>
+	                  <a href='media.html'>
+	                    <i class='icon-caret-right'></i>
+	                    <span>媒体</span>
+	                  </a>
+	                </li>
+	                <li class=''>
+	                  <a href='adSpace.html'>
+	                    <i class='icon-caret-right'></i>
+	                    <span>广告位</span>
+	                  </a>
+	                </li>
+	              </ul>
+	            </li>
+	            <li class='active'>
+	              <a class="dropdown-collapse" href="search.html">
+	                <i class='icon-bar-chart'></i>
+	                <span>搜索</span>
+	              </a>
+	            </li>
+	            <li class=''>
+	              <a class="dropdown-collapse" href="#">
+	                <i class='icon-desktop'></i>
+	                <span>网盟</span>
+	                
+	              </a>
+	            </li>
+	          </ul>
+	        </div>
+	    </nav>
+	    <section id="content">
+	    	<div class='container'>
+                <div class='row' style="padding-bottom:0px;" id='content-wrapper'>
+                    <div class='col-xs-12 col-sm-12'>
+                    	<div class="page-header page-header-with-buttons">
+                    		<div class="row">
+                    			<div class="col-xs-12 col-sm-6">
+                    				<h1 class="pull-left">
+					                  <i class="icon-home"></i>
+					                  <span>产品</span>
+			                	    </h1>
+                    			</div>
+                    			<div class="clearfix"></div>
+                    		</div>
+              			</div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-xs-12 col-sm-12">
+                      <div class="box">
+
+                           <div class="row">
+                           	    <div class="col-xs-12 col-sm-12">
+                           	    	<div class="panel panel-default">
+                           	    		<div class="panel-heading">
+                           	    			<div class="row">
+                           	    				<div class="col-xs-12 col-sm-6 text-left">
+                                                    <button id="createAdSpace" type="button" class="btn btn-primary">新&nbsp;&nbsp;建</button>
+                       	    				  	</div>
+                           	    				<div class="col-xs-12 col-sm-6 text-right">
+                           	    					<div class="row">
+                                                    	<div class="col-xs-4 col-sm-4">
+                                                  			<div class="btn-group">
+                           					    	 			筛选：按照
+                           					      			</div>
+                              					   			<div class="btn-group">
+                                                                <select id="inputSelect" class="form-control">
+                                                                    <option>名称</option>
+                                                                    <option>ID</option>
+                                                                </select>
+                              					    		</div>
+                                                         </div>
+                                                        <div class="col-xs-5 col-sm-5">
+                                                             <div class="input-group">
+                                                                 <input class="form-control" type="text">
+                                                                 <span class="input-group-addon">
+                                                                     <i class="icon-search"></i>
+                                                                 </span>
+                                                             </div>
+                                                        </div>
+                                                        <div class="col-xs-3 col-sm-3">
+                                                            <button id="back" type="button" class="btn btn-primary">返回上一级</button>
+                                                        </div>
+                                                 </div>
+                       	    				  </div>
+                           	    			</div>
+                           	    		</div>
+                           	    		<div class="panel-body">
+                           	    			<div class="responsive-table">
+						                        <div>
+						                          <table id="commonMedia" class="table table-bordered table-hover table-striped">
+						                            <thead>
+						                              <tr>
+                                                        <th class="sorting">产品ID</th>
+						                                <th class="text-center">名称</th>
+						                                <th class="text-center">状态</th>
+						                                <th class="text-center">关键字个数</th>
+						                                <th class="text-center">有效关键字个数</th>
+						                                <th class="text-center">修改时间</th>
+						                                <th class="text-center">修改用户</th>
+						                                <th class="text-center">操作</th>
+						                              </tr>
+						                            </thead>
+						                            <tbody>
+						                            </tbody>
+						                          </table>
+						                        </div>
+			                                </div>
+                           	    		</div>
+                           	    	</div>
+	                         </div>
+                   	      </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+	    </section>
+	   </div>
+      <!-- your & Flatty javascripts -->
+        <!-- / jquery [required] -->
+    <script src="../assets/javascripts/jquery/jquery.min.js" type="text/javascript"></script>
+    <!-- / jquery mobile (for touch events) -->
+    <script src="../assets/javascripts/jquery/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <!-- / jquery migrate (for compatibility with new jquery) [required] -->
+    <script src="../assets/javascripts/jquery/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- / jquery ui -->
+    <script src="../assets/javascripts/jquery/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- / jQuery UI Touch Punch -->
+    <script src="../assets/javascripts/plugins/jquery_ui_touch_punch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <!-- / bootstrap [required] -->
+    <script src="../assets/javascripts/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <!-- / modernizr -->
+    <script src="../assets/javascripts/plugins/modernizr/modernizr.min.js" type="text/javascript"></script>
+    <!-- / retina -->
+    <script src="../assets/javascripts/plugins/retina/retina.js" type="text/javascript"></script>
+    <!-- / theme file [required] -->
+    <script src="../assets/javascripts/theme.js" type="text/javascript"></script>
+
+    <script src="../assets/javascripts/plugins/common/moment.min.js" type="text/javascript"></script>
+    <script src="../assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js" type="text/javascript"></script>
+
+    <!-- project request -->
+    <script type="text/javascript" src="../js/project.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            //造数start
+            var totalData = [
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+                {id:2, name:"名称1", status:'活动', num:'10', number:'100', time:'2000-10-10 19:00', user:'user1'},
+            ];
+            var getData = function(params){
+                var result = {
+                    totalCount:totalData.length
+                };
+                var pageNo = params.pageNo;
+                var pageSize = params.pageSize;
+                var sort = params.orderBy;
+                var sortType = params.sortType;
+                var order = params.order;
+                var type = params.type;
+                if(sort){
+                    ArrayUtil.sortObj(totalData, sort, order, sortType);
+                }
+                if(pageSize){
+                    var from = (pageNo - 1) * pageSize;
+                    var to = Math.min(from + pageSize, totalData.length);
+                    var bodyData = [];
+                    for(var i=from;i<to;i++){
+                        bodyData.push(totalData[i]);
+                    }
+                    result.bodyData = bodyData;
+                }else{
+                    result.bodyData = totalData;
+                }
+                for(var k in params){
+                    result[k] = params[k];
+                }
+                return result;
+            };
+            //造数end
+            var grid = Grid.init({
+                holder: 'commonMedia',
+                bodyTemplate: '<tr><td>{id}</td><td>{name}</td><td>{status}</td><td>{num}</td><td>{number}</td><td>{time}</td><td>{user}</td><td> 查看 | 删除 </td></tr>',
+                dataSource: getData,//url
+                pageSize: 6,
+                sendOnPageSize: true
+            });
+            grid.onedited = function (node, type, oldVal, newVal) {
+                alert('old:' + oldVal + ",new:" + newVal);
+            }
+            grid.beforeSend = function () {
+                console.log('before send，可以在这里处理下数据整理工作')
+            };
+            grid.onfilled = function (data) {
+                console.log('表格数据渲染完成。您可以在此处理其他事件')
+            };
+            grid.modifyModel = function (model) {
+                console.log(model);
+            };
+            grid.onrowed = function (tr, data) {
+                console.log(tr, data)
+            };
+            grid.oncolumned = function (tdOrth, data) {
+                console.log(tdOrth, data)
+            };
+            grid.onellipsised = function (node) {
+                console.log(node)
+            };
+            grid.send();
+        })();
+    </script>
+
+    </body>
+  </html>

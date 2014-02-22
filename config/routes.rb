@@ -1,4 +1,18 @@
 Sdm002::Application.routes.draw do
+	resources :publishers
+	resources :channels
+	resources :positions
+
+	match '/createPublisher', to: 'publishers#new', via: 'get'
+	match '/getPublishers', to: 'publishers#get_publishers', via: 'post'
+	
+	match '/createChannel', to: 'channels#new', via: 'get'
+	match '/getChannels', to: 'channels#get_channels', via: 'post'
+
+	match '/createPosition', to: 'positions#new', via: 'get'
+	match '/getPositions', to: 'positions#get_positions', via: 'post'
+
+	#root to: 'publishers#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

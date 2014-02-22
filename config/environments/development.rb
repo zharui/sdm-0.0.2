@@ -26,4 +26,8 @@ Sdm002::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+	config.assets.precompile += %w( .svg .eot .woff .ttf )
+		
+	config.action_controller.allow_forgery_protection = false
 end

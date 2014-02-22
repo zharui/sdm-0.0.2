@@ -1,0 +1,260 @@
+	    <section id="content">
+	    	<div class='container'>
+                <div class='row' style="padding-bottom:0px;" id='content-wrapper'>
+                    <div class='col-xs-12 col-sm-12'>
+                    	<div class="page-header page-header-with-buttons">
+                    		<div class="row">
+                    			<div class="col-xs-12 col-sm-6">
+                    				<h1 class="pull-left">
+					                  <i class="icon-home"></i>
+					                  <span>广告位列表</span>
+			                	    </h1>
+                    			</div>
+                    			<div class="clearfix"></div>
+                    		</div>
+              			</div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-xs-12 col-sm-12">
+                      <div class="box">
+
+                           <div class="row">
+                           	    <div class="col-xs-12 col-sm-12">
+                           	    	<div class="panel panel-default">
+                           	    		<div class="panel-heading">
+                           	    			<div class="row">
+                           	    				<div class="col-xs-12 col-sm-6 text-left">
+                                                    <button onclick="window.location='createPosition?publisher='+gon.publisher+'&channel='+gon.channel;" id="createAdvertising" type="button" class="btn btn-primary">新&nbsp;&nbsp;建</button>
+                       	    				  	</div>
+                           	    				<!--<div class="col-xs-12 col-sm-6 text-right">
+                                                
+                           	    					<div class="row">
+                                                    	<div class="col-xs-5 col-sm-5">
+                                                  			<div class="btn-group">
+                           					    	 			筛选：按照
+                           					      			</div>
+                              					   			<div class="btn-group">
+                                                                <select id="inputSelect" class="form-control">
+                                                                    <option>广告位名称</option>
+                                                                    <option>广告位ID</option>
+                                                                </select>
+                              					    		</div>
+                                                         </div>
+                                                        <div class="col-xs-7 col-sm-7">
+                                                             <div class="input-group">
+                                                                 <input class="form-control" placeholder="广告位ID、名称" type="text">
+                                                                 <span class="input-group-addon">
+                                                                     <i class="icon-search"></i>
+                                                                 </span>
+                                                             </div>
+                                                        </div>
+                                                 </div>
+                       	    				  </div>-->
+																			<div class="col-xs-12 col-sm-6 text-right">
+                                                <div class="row">
+                                                    <div class="col-xs-5 col-sm-5">
+                                                        <div class="btn-group">
+                                                          	search by 
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <select id="searchType" id="inputSelect" class="form-control">
+                                                                <option>id</option>
+                                                                <option>name</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-xs-7 col-sm-7">
+                                                        <div class="input-group">
+                                                            <input id="searchTxt" class="form-control" placeholder="id or name"
+                                                                   type="text">
+                                                                 <span id="searchBtn" class="input-group-addon">
+                                                                     <i class="icon-search"></i>
+                                                                 </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                           	    			</div>
+                           	    		</div>
+                           	    		<div class="panel-body">
+                           	    			<div class="responsive-table">
+						                        <div>
+						                          <table id="commonMedia" class="table table-bordered table-hover table-striped">
+						                            <thead>
+						                              <tr>
+                                                        <th class="sorting">广告位ID</th>
+						                                <th class="text-center">广告位名称</th>
+																						<th class="text-center">Url</th>
+						                                <th class="text-center">状态</th>
+						                                <th class="text-center">广告类型</th>
+						                                <th class="text-center">物料类型</th>
+						                                <th class="text-center">展现形式</th>
+						                                <th class="text-center">格式</th>
+						                                <th class="text-center">尺寸</th>
+						                                <th class="text-center">大小</th>
+						                                <th class="text-center">投放形式</th>
+						                                <th class="text-center">付费方式</th>
+						                                <th class="text-center">操作</th>
+						                              </tr>
+						                            </thead>
+						                            <tbody>
+						                            </tbody>
+						                          </table>
+						                        </div>
+			                                </div>
+                           	    		</div>
+                           	    	</div>
+	                         </div>
+                   	      </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+	    </section>
+      <!-- your & Flatty javascripts -->
+        <!-- / jquery [required] -->
+    <script src="/assets/jquery/jquery.min.js" type="text/javascript"></script>
+    <!-- / jquery mobile (for touch events) -->
+    <script src="/assets/jquery/jquery.mobile.custom.min.js" type="text/javascript"></script>
+    <!-- / jquery migrate (for compatibility with new jquery) [required] -->
+    <script src="/assets/jquery/jquery-migrate.min.js" type="text/javascript"></script>
+    <!-- / jquery ui -->
+    <script src="/assets/jquery/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- / jQuery UI Touch Punch -->
+    <script src="/assets/plugins/jquery_ui_touch_punch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+    <!-- / bootstrap [required] -->
+    <script src="/assets/bootstrap/bootstrap.js" type="text/javascript"></script>
+    <!-- / modernizr -->
+    <script src="/assets/plugins/modernizr/modernizr.min.js" type="text/javascript"></script>
+    <!-- / retina -->
+    <script src="/assets/plugins/retina/retina.js" type="text/javascript"></script>
+    <!-- / theme file [required] -->
+    <script src="/assets/theme.js" type="text/javascript"></script>
+
+    <script src="/assets/plugins/common/moment.min.js" type="text/javascript"></script>
+    <script src="/assets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js" type="text/javascript"></script>
+
+    <!-- project request -->
+    <script type="text/javascript" src="/assets/project.js"></script>
+
+    <script type="text/javascript">
+				var grid
+        $(function () {
+            //造数start
+            var totalData = [
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'},
+                {id:2, name:"名称1", meiti:'媒体1', pindao:'频道1', status:'活动', xingshi:'形式1', geshi:'格式2', chicun:'100*100', daxiao:'100', toufang:"投放形式1", fangshi:'方式1', time:'2000-10-10', user:'user1'}
+            ];
+            var getData = function(params){
+                var result = {
+                    totalCount:totalData.length
+                };
+                var pageNo = params.pageNo;
+                var pageSize = params.pageSize;
+                var sort = params.orderBy;
+                var sortType = params.sortType;
+                var order = params.order;
+                var type = params.type;
+                if(sort){
+                    ArrayUtil.sortObj(totalData, sort, order, sortType);
+                }
+                if(pageSize){
+                    var from = (pageNo - 1) * pageSize;
+                    var to = Math.min(from + pageSize, totalData.length);
+                    var bodyData = [];
+                    for(var i=from;i<to;i++){
+                        bodyData.push(totalData[i]);
+                    }
+                    result.bodyData = bodyData;
+                }else{
+                    result.bodyData = totalData;
+                }
+                for(var k in params){
+                    result[k] = params[k];
+                }
+                return result;
+            };
+            //造数end
+            grid = Grid.init({
+                holder: 'commonMedia',
+                bodyTemplate: '<tr><td>{id}</td><td>{name}</td><td>{url}</td><td>{status}</td><td>{type}</td><td>{material}</td><td>{layout}</td><td>{format}</td><td>{dimension}</td><td>{size}</td><td>{serving_type}</td><td>{payment_type}</td><td> <a href="editAdvertising.html">编辑</a> | @viewDelete({id}) </td></tr>',
+                dataSource: '/getPositions?publisher='+gon.publisher+'&channel='+gon.channel,//url
+                pageSize: 6,
+                sendOnPageSize: true
+            });
+            grid.onedited = function (node, type, oldVal, newVal) {
+                alert('old:' + oldVal + ",new:" + newVal);
+            }
+            grid.beforeSend = function () {
+                console.log('before send，可以在这里处理下数据整理工作')
+            };
+            grid.onfilled = function (data) {
+                console.log('表格数据渲染完成。您可以在此处理其他事件')
+            };
+            grid.modifyModel = function (model) {
+                console.log(model);
+            };
+            grid.onrowed = function (tr, data) {
+                console.log(tr, data)
+            };
+            grid.oncolumned = function (tdOrth, data) {
+                console.log(tdOrth, data)
+            };
+            grid.onellipsised = function (node) {
+                console.log(node)
+            };
+            grid.send();
+						//åå¨æ¥è¢èå¥æä­æ²åè¦æ¶è¦å
+        $("#searchTxt").keydown(function(e) {
+            if (e.keyCode == 13) {
+                search();
+            }
+        });
+
+//åç¹å»searchçbuttonæ¶è¦å
+        $("#searchBtn").click(function() {
+            search();
+        });
+        });
+				function search() {
+            grid.send({
+                "searchTxt" : $("#searchTxt").val(),
+                "searchType" : $("#searchType").val()
+            });
+        }
+        function viewDelete(id) {
+            return "<a href='javascript:void(0);' onclick='deleteAdvertising(+" + id + ")' >删除</a>";
+        }
+        var popDelete = Pop.init({
+            width: 700,
+            height: 390,
+            modal: true,
+            title: '系统消息'
+        });
+        function deleteAdvertising(id) {
+            //后台判断是以哪种页面方式展现
+            //看后台如何处理的，如果后台能够控制返回的页面那么可以采用showDialog的方式
+            /**
+             * function deleteProduct(productId) {
+		     *   showDialog("<s:url value='/product/loadDelete'/>?productId="+productId, '删除产品信息', 500, 150);
+	         * }
+             * 路径：js/dialog.js
+             */
+                //popDelete.load("/media/deleteMedia.html");
+            popDelete.load("/media/deleteMedia1.html", {width: 500, height: 230});
+        }
+    </script>
+
+    </body>
+  </html>

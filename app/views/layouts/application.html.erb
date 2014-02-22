@@ -2,13 +2,127 @@
 <html>
 <head>
   <title>Sdm002</title>
+	<%= include_gon %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
+    <nav class="navbar navbar-default" style="margin-bottom:0;border:0;background:#FFF;" role="navigation">
+        <div class="navbar-header">
+            <img src="/assets/sn_logo.png" width="50"/>
+            <span style="font-size:1.5em;line-height:50px;height:50px;">Digital Marketing</span>
+            <button class="navbar-toggle orange-background" data-target=".navbar-ex1-collapse" style="border:0;"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" style="line-height:50px;height:50px;">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a href="index.html" style="display:inline;padding:0;"><img src="/assets/nav1.png"></a>
+                    <a href="index.html" style="display:inline;padding-left:0">Dashboard</a>
+                </li>
+                <li>
+                    <a href="campaign.html" style="display:inline;padding:0;"><img src="/assets/nav2.png"></a>
+                    <a href="campaign.html" style="display:inline;padding-left:0">Campaign Manager</a>
+                </li>
+                <li>
+                    <a href="" style="display:inline;padding:0;"><img src="/assets/nav3.png"></a>
+                    <a href="" style="display:inline;padding-left:0">Monitor</a>
+                </li>
+                <li class=""><a href="media.html" style="display:inline;padding-left:0">
+                    <img src="/assets/nav6.png">Media Manager
+                </a></li>
+                <li class=""><a href="media.html" style="display:inline;padding-left:0">
+                    <img src="/assets/nav4.png">Analytics
+                </a></li>
 
+                <li>
+                    <a href="" style="display:inline;padding:0;"><img src="/assets/nav5.png"></a>
+                    <a href="" style="display:inline;padding-left:0">Competitive Analytics</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-default orange-background" style="margin-bottom:0;">
+        <!-- application logo -->
+        <ul class="nav navbar-nav navbar-left" style="float:left;width:100%;">
+            <li style="float:left;">
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                </a>
+            </li>
+            <li style="float:left;">
+                <a href="#">
+                    <i class="icon-globe"></i>
+                    http://www.suning.com
+                    <i class="caret"></i>
+                </a>
+            </li>
+            <li style="float:left;">
+                <a href="">报告</a>
+            </li>
+            <li style="float:left;">
+                <a href="">自定义</a>
+            </li>
+            <li style="float:left;">
+                <a href="">优化</a>
+            </li>
+            <li style="float:right;"><a href="#">帮助</a></li>
+            <li style="float:right;"><a href="#">管理</a></li>
+        </ul>
+    </nav>
+
+</div>
+<div id="wrapper" style="position:relative;">
+<div id="main-nav-bg" style="background-color:#FFFFFF"></div>
+<nav id="main-nav" style="top:0px;">
+    <div class='navigation'>
+        <ul class='nav nav-stacked'>
+            <li class='active'>
+                <a class="dropdown-collapse" href="#">
+                    <i class='icon-exchange'></i>
+                    <span>普通媒体</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked in'>
+                    <li class='active'>
+                        <a href='/publishers'>
+                            <i class='icon-caret-right'></i>
+                            <span>媒体</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='/all_channels'>
+                            <i class='icon-caret-right'></i>
+                            <span>广告位</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=''>
+                <a class="dropdown-collapse" href="#">
+                    <i class='icon-bar-chart'></i>
+                    <span>搜索</span>
+
+                </a>
+            </li>
+            <li class=''>
+                <a class="dropdown-collapse" href="#">
+                    <i class='icon-desktop'></i>
+                    <span>网盟</span>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <%= yield %>
-
+</div>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>
