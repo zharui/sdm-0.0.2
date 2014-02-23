@@ -1,12 +1,9 @@
-class PositionsController < ApplicationController
+class AllPositionsController < ApplicationController
 	def index
-		gon.channel = Channel.find(params[:channel]).id
-		gon.publisher = Publisher.find(params[:publisher]).id
 	end
 
-	def get_positions	
-		channel = Channel.find(params[:channel])
-		positions = channel.positions.search(params[:searchType], params[:searchTxt])
+	def get_all_positions	
+		positions = Position.search(params[:searchType], params[:searchTxt])
 		totalCount = positions.count()
 		totalPage = totalCount / params[:pageSize] + 1
 		start = (params[:pageNo] - 1) * params[:pageSize]
@@ -24,6 +21,8 @@ class PositionsController < ApplicationController
 			record['id'] = position['id']
 			record['name'] = position['name']
 			record['url'] = position['url']
+			record['publisher'] = Publisher.find(position['publisher_id']).name
+			record['channel'] = Channel.find(position['channel_id']).name
 			record['status'] = State.find(position['state_id']).name
 			record['type'] = AdType.find(position['adtype_id']).name
 			record['material'] = Material.find(position['material_id']).name
@@ -42,7 +41,7 @@ class PositionsController < ApplicationController
 			format.json { render json: msg }
   	end
 	end
-	
+
 	def new
 		@position = Position.new
 	end
@@ -50,13 +49,13 @@ class PositionsController < ApplicationController
 	def edit
 		@position = Position.find(params[:id])
 	end
-	
+
 	def create
 		to_be_created = { name: params[:position][:name],
 											url: params[:position][:url],
+											publisher_id: Publisher.find_by(name: params[:position][:publisher_id]).id,
+											channel_id: Channel.find_by(name: params[:position][:channel_id]).id,
 											state_id: State.find_by(name: params[:position][:state_id]).id,
-											publisher_id: params[:publisher].to_i,
-											channel_id: params[:channel].to_i,
 											adtype_id: AdType.find_by(name: params[:position][:adtype_id]).id,
 											material_id: Material.find_by(name: params[:position][:material_id]).id,
 											layout_id: Layout.find_by(name: params[:position][:layout_id]).id,
@@ -68,16 +67,18 @@ class PositionsController < ApplicationController
 											user_id: 1 }
 		@position = Position.new(to_be_created)
 		if @position.save
-			redirect_to positions_path(publisher: params[:publisher], channel: params[:channel])
+			redirect_to all_positions_path
 		else
-			render action: :new, publisher: params[:publisher], channel: params[:channel]
+			render 'new'
 		end
 	end
-	
+
 	def update
 		Position.update(params[:id],
-											name: params[:position][:name],
+						name: params[:position][:name],
 											url: params[:position][:url],
+											publisher_id: Publisher.find_by(name: params[:position][:publisher_id]).id,
+											channel_id: Channel.find_by(name: params[:position][:channel_id]).id,
 											state_id: State.find_by(name: params[:position][:state_id]).id,
 											adtype_id: AdType.find_by(name: params[:position][:adtype_id]).id,
 											material_id: Material.find_by(name: params[:position][:material_id]).id,
@@ -87,9 +88,8 @@ class PositionsController < ApplicationController
 											size: params[:position][:size],
 											serving_id: ServingType.find_by(name: params[:position][:serving_id]).id,
 											payment_id: PaymentType.find_by(name: params[:position][:payment_id]).id,
-											user_id: 1
-			)
-		redirect_to positions_path(publisher: params[:publisher], channel: params[:channel])	
+											user_id: 1)
+		redirect_to	all_positions_path
 	end
 
 	def destroy
@@ -97,4 +97,5 @@ class PositionsController < ApplicationController
 		session[:return_to] ||= request.referer	
 		redirect_to session.delete(:return_to)
 	end
+
 end

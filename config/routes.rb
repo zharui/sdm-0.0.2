@@ -2,6 +2,7 @@ Sdm002::Application.routes.draw do
 	resources :publishers
 	resources :channels
 	resources :positions
+	resources :all_positions
 
 	match '/createPublisher', to: 'publishers#new', via: 'get'
 	match '/getPublishers', to: 'publishers#get_publishers', via: 'post'
@@ -11,6 +12,9 @@ Sdm002::Application.routes.draw do
 
 	match '/createPosition', to: 'positions#new', via: 'get'
 	match '/getPositions', to: 'positions#get_positions', via: 'post'
+
+	match '/createAllPosition', to: 'all_positions#new', via: 'get'
+	match '/getAllPositions', to: 'all_positions#get_all_positions', via: 'post'
 
 	#root to: 'publishers#index'
   # The priority is based upon order of creation: first created -> highest priority.
